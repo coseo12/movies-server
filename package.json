@@ -1,0 +1,31 @@
+{
+  "name": "movies-server",
+  "version": "1.0.0",
+  "description": "Express with REST API + GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mariadb": "^2.1.1",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^5.19.3",
+    "@types/node": "^12.7.11",
+    "@types/validator": "^10.11.3",
+    "@types/bluebird": "^3.5.27"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/express": "^4.17.1",
+    "@types/http-errors": "^1.6.2",
+    "@types/node": "^12.7.11",
+    "@types/validator": "^10.11.3",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  }
+}
