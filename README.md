@@ -1,5 +1,5 @@
 # movies-server
 
-REST API + GraphQL Server
+REST API
 
 # In development...

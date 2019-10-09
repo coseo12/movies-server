@@ -1,10 +1,12 @@
 import express from 'express';
 import httpErrors from 'http-errors';
 import { userRouter } from './routes/usersRouter';
+import { moviesRouter } from './routes/moviesRouter';
 
 const app = express();
 
-app.use('/user', userRouter);
+app.use('/users', userRouter);
+app.use('/movies', moviesRouter);
 
 app.use((req, res, next) => {
   res.status(404);

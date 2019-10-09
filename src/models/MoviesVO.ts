@@ -1,15 +1,14 @@
 import { sequelize } from '../config/connection';
 import Sequelize, { Model } from 'sequelize';
 
-export class UserVO extends Model<UserVO> {
+export class MoviesVO extends Model<MoviesVO> {
   id: number;
-  email: string;
-  pass: string;
-  nickname: string;
+  title: string;
+  content: string;
   created_at: Date;
 }
 
-UserVO.init(
+MoviesVO.init(
   {
     id: {
       type: Sequelize.INTEGER,
@@ -17,16 +16,12 @@ UserVO.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    email: {
-      type: Sequelize.STRING(50),
-      allowNull: false,
-    },
-    pass: {
-      type: Sequelize.STRING(50),
-      allowNull: false,
-    },
-    nickname: {
+    title: {
       type: Sequelize.STRING(20),
+      allowNull: false,
+    },
+    content: {
+      type: Sequelize.STRING(100),
       allowNull: false,
     },
     created_at: {
@@ -37,7 +32,7 @@ UserVO.init(
   },
   {
     sequelize,
-    modelName: 'UserVO',
-    tableName: 'users',
+    modelName: 'MoviesVO',
+    tableName: 'movies',
   },
 );

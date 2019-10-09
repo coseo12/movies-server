@@ -6,6 +6,7 @@ let config = null;
 if (env === 'development') config = conn.development;
 else if (env === 'test') config = conn.test;
 else config = conn.production;
+const db = {};
 
 export const sequelize = new Sequelize(
   config.database,

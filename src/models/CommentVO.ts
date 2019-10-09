@@ -1,11 +1,13 @@
 import { sequelize } from '../config/connection';
-import Sequelize, { Model } from 'sequelize';
+import Sequelize, { Model, ForeignKeyConstraintError } from 'sequelize';
 
 export class CommentVO extends Model<CommentVO> {
   id: number;
+  movies_id: number;
   commenter: number;
   comment: string;
-  create_at: Date;
+  score: number;
+  created_at: Date;
 }
 
 CommentVO.init(
@@ -16,6 +18,10 @@ CommentVO.init(
       autoIncrement: true,
       primaryKey: true,
     },
+    movies_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
     commenter: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -24,7 +30,11 @@ CommentVO.init(
       type: Sequelize.TEXT,
       allowNull: false,
     },
-    create_at: {
+    score: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
+    created_at: {
       type: Sequelize.DATE,
       allowNull: false,
       defaultValue: Sequelize.literal('now()'),
@@ -32,7 +42,7 @@ CommentVO.init(
   },
   {
     sequelize,
-    modelName: 'UserVO',
-    tableName: 'users',
+    modelName: 'CommentVO',
+    tableName: 'comment',
   },
 );
