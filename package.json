@@ -14,7 +14,7 @@
     "@types/bluebird": "^3.5.27",
     "@types/node": "^12.7.11",
     "@types/validator": "^10.11.3",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mariadb": "^2.1.1",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.19.3"
